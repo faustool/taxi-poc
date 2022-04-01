@@ -1,0 +1,28 @@
+// Core customer data
+namespace com.vfs.ee.domain.customer.types
+
+
+[[ The identification number of a customer ]]
+@Id
+type CustomerId inherits Int
+
+// should different customers have their own namespace instead? e.g. customer.person and customer.business?
+[[ The kind of customer ]]
+enum CustomerKind {
+    Person, Business
+}
+
+[[ The first name of a customer ]]
+type CustomerFirstName inherits String
+
+[[ The last name of a customer ]]
+type CustomerLastName inherits String
+
+[[ The full name of a customer, consisting of both FirstName and LastName ]]
+type CustomerFullName inherits String
+
+[[ The customer e-mail address ]]
+type CustomerEmailAddress inherits String
+
+[[ The customer date of birth ]]
+type CustomerDateOfBirth inherits Date

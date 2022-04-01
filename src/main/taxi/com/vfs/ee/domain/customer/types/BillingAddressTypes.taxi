@@ -1,0 +1,22 @@
+namespace com.vfs.ee.domain.customer.types
+
+[[ The customer billing street number ]]
+type BillingStreetNumber inherits GenericStreetNumber
+
+[[ The customer billing street name ]]
+type BillingStreetName inherits GenericStreetName
+
+[[ The customer billing street addres (number + name) ]]
+type BillingStreetAddress inherits GenericStreetAddress
+
+[[ The customer billing zip code ]]
+type BillingZipCode inherits GenericZipCode
+
+[[ The customer billing city name ]]
+type BillingCityName inherits GenericCityName
+
+[[ The customer billing state ]]
+type BillingCityState inherits GenericCityState
+
+[[ The customer billing Country ]]
+type BillingCountryName inherits GenericCountryName

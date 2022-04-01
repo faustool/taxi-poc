@@ -1,0 +1,22 @@
+namespace com.vfs.ee.domain.customer.types
+
+[[ The customer mailing street number ]]
+type MailingStreetNumber inherits GenericStreetNumber
+
+[[ The customer mailing street name ]]
+type MailingStreetName inherits GenericStreetName
+
+[[ The customer mailing street addres (number + name) ]]
+type MailingStreetAddress inherits GenericStreetAddress
+
+[[ The customer mailing zip code ]]
+type MailingZipCode inherits GenericZipCode
+
+[[ The customer mailing city name ]]
+type MailingCityName inherits GenericCityName
+
+[[ The customer mailing state ]]
+type MailingCityState inherits GenericCityState
+
+[[ The customer mailing Country ]]
+type MailingCountryName inherits GenericCountryName

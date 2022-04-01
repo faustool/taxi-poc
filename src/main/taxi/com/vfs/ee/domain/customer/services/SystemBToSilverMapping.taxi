@@ -1,0 +1,20 @@
+import com.vfs.ee.domain.customer.models.SystemBDailyCustomerFeed
+import com.vfs.ee.domain.customer.models.SilverCustomerModel
+import com.vfs.ee.domain.customer.models.SystemBAddress
+import com.vfs.ee.domain.customer.models.SilverBillingAddress
+import com.vfs.ee.domain.customer.models.SilverOtherAddress
+import com.vfs.ee.domain.customer.models.SilverMailingAddress
+
+namespace com.vfs.ee.domain.customer.services
+
+service SystemBToSilverMappingService {
+
+    
+    operation mapSystemBToSilverCustomerModel(SystemBDailyCustomerFeed): SilverCustomerModel
+
+    operation mapSystemBAddressToSilverBilling(SystemBAddress): SilverBillingAddress
+    operation mapSystemBAddressToSilverMailing(SystemBAddress): SilverMailingAddress
+    operation mapSystemBAddressToSilverOther(SystemBAddress): SilverOtherAddress
+
+
+}

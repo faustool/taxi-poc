@@ -1,0 +1,17 @@
+import com.vfs.ee.domain.customer.types.GenericStreetAddress
+import com.vfs.ee.domain.customer.types.GenericStreetName
+import com.vfs.ee.domain.customer.types.GenericStreetNumber
+
+namespace com.vfs.ee.domain.customer.services
+
+parameter model SplitStreetAddressResult {
+    streetNumber: GenericStreetNumber
+    streetName: GenericStreetName
+}
+
+service AddressMappingService {
+
+    operation splitStreetAddress(GenericStreetAddress): SplitStreetAddressResult
+    operation joinStreetNumberAndName(GenericStreetNumber, GenericStreetName): GenericStreetAddress
+
+}

@@ -1,0 +1,13 @@
+import com.vfs.ee.domain.customer.types.CustomerId
+import com.vfs.ee.domain.customer.models.NumericCustomerId
+import com.vfs.ee.domain.customer.models.TextualCustomerId
+
+namespace com.vfs.ee.domain.customer.services
+
+service CustomerIdMappingService {
+
+    operation mapSystemACustomerIdToCustomerId(TextualCustomerId): CustomerId
+
+    operation mapSystemBCustomerIdToCustomerId(NumericCustomerId): CustomerId
+
+}

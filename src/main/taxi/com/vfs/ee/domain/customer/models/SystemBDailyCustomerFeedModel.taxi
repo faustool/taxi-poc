@@ -1,0 +1,46 @@
+import com.vfs.ee.domain.customer.types.CustomerEmailAddress
+import com.vfs.ee.domain.customer.types.BillingStreetAddress
+import com.vfs.ee.domain.customer.types.BillingCityName
+import com.vfs.ee.domain.customer.types.MailingStreetAddress
+import com.vfs.ee.domain.customer.types.MailingCityName
+import com.vfs.ee.domain.customer.types.GenericStreetAddress
+import com.vfs.ee.domain.customer.types.GenericCityName
+import com.vfs.ee.domain.customer.types.CustomerDateOfBirth
+import com.vfs.ee.domain.customer.types.CustomerFullName
+import com.vfs.ee.domain.customer.types.CustomerId
+
+namespace com.vfs.ee.domain.customer.models
+
+[[ The address type: M = Mailing, B = billing, O = other]]
+enum SystemBAddressType {
+    M, B, O
+}
+
+[[ The kind of customer: P = person, B = business ]]
+enum SystemBCustomerKind {
+    
+}
+
+type SystemBCustomerId inherits Int
+
+model SystemBAddress {
+    _type: SystemBAddressType
+    streetAddress: GenericStreetAddress
+    cityName: GenericCityName
+}
+
+model SystemBDailyCustomerFeed {
+    
+    id: SystemBCustomerId
+    
+    kind: SystemBCustomerKind
+    
+    fullName: CustomerFullName
+
+    dateOfBirth: CustomerDateOfBirth
+
+    email: CustomerEmailAddress?
+    
+    addressList: SystemBAddress[]?
+    
+}

@@ -1,0 +1,72 @@
+import com.vfs.ee.domain.customer.types.CustomerDateOfBirth
+import com.vfs.ee.domain.customer.types.BillingZipCode
+import com.vfs.ee.domain.customer.types.BillingCountryName
+import com.vfs.ee.domain.customer.types.CustomerLastName
+import com.vfs.ee.domain.customer.types.CustomerFirstName
+import com.vfs.ee.domain.customer.types.CustomerEmailAddress
+import com.vfs.ee.domain.customer.types.BillingStreetAddress
+import com.vfs.ee.domain.customer.types.BillingCityName
+import com.vfs.ee.domain.customer.types.BillingCityState
+import com.vfs.ee.domain.customer.types.MailingStreetAddress
+import com.vfs.ee.domain.customer.types.MailingCityName
+import com.vfs.ee.domain.customer.types.MailingCityState
+import com.vfs.ee.domain.customer.types.MailingCountryName
+import com.vfs.ee.domain.customer.types.MailingZipCode
+import com.vfs.ee.domain.customer.types.GenericStreetAddress
+import com.vfs.ee.domain.customer.types.GenericCityName
+import com.vfs.ee.domain.customer.types.GenericCityState
+import com.vfs.ee.domain.customer.types.GenericCountryName
+import com.vfs.ee.domain.customer.types.GenericZipCode
+import com.vfs.ee.domain.customer.types.CustomerKind
+import com.vfs.ee.domain.customer.types.CustomerFullName
+import com.vfs.ee.domain.customer.types.CustomerId
+
+namespace com.vfs.ee.domain.customer.models
+
+
+model GoldenBillingAddress {
+    billingStreetAddress: BillingStreetAddress
+    billingCityName: BillingCityName
+    billingCityState: BillingCityState
+    billingCountryName: BillingCountryName
+    billingZipCode: BillingZipCode
+}
+
+model GoldenMailingAddress {
+    mailingStreetAddress: MailingStreetAddress
+    mailingCityName: MailingCityName
+    mailingCityState: MailingCityState
+    mailingCountryName: MailingCountryName
+    mailingZipCode: MailingZipCode
+}
+
+model GoldenOtherAddress {
+    genericStreetAddress: GenericStreetAddress
+    genericCityName: GenericCityName
+    genericCityState: GenericCityState
+    genericCountryName: GenericCountryName
+    genericZipCode: GenericZipCode
+}
+
+model GoldenCustomerModel {
+
+    source: SourceSystem
+
+    id: CustomerId
+
+    kind: CustomerKind
+
+    firstName: CustomerFirstName
+
+    lastName: CustomerLastName
+
+    dateOfBirth: CustomerDateOfBirth
+
+    email: CustomerEmailAddress?
+
+    billingAddress: GoldenBillingAddress?
+
+    mailingAddress: GoldenMailingAddress?
+
+    otherAddresses: GoldenOtherAddress[]?
+}

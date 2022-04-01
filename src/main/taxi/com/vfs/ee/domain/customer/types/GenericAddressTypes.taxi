@@ -1,0 +1,22 @@
+namespace com.vfs.ee.domain.customer.types
+
+[[ A generic street number ]]
+type GenericStreetNumber inherits Int
+
+[[ A generic street name ]]
+type GenericStreetName inherits String
+
+[[ A generic street addres (number + name) ]]
+type GenericStreetAddress inherits String
+
+[[ A generic zip code ]]
+type GenericZipCode inherits String
+
+[[ A generic city name ]]
+type GenericCityName inherits String
+
+[[ A generic state ]]
+type GenericCityState inherits String
+
+[[ A generic Country ]]
+type GenericCountryName inherits String

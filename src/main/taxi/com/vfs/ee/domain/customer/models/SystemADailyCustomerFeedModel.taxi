@@ -1,0 +1,56 @@
+import com.vfs.ee.domain.customer.types.CustomerDateOfBirth
+import com.vfs.ee.domain.customer.types.BillingStreetName
+import com.vfs.ee.domain.customer.types.BillingStreetNumber
+import com.vfs.ee.domain.customer.types.CustomerEmailAddress
+import com.vfs.ee.domain.customer.types.BillingCityName
+import com.vfs.ee.domain.customer.types.MailingStreetNumber
+import com.vfs.ee.domain.customer.types.MailingStreetName
+import com.vfs.ee.domain.customer.types.MailingCityName
+import com.vfs.ee.domain.customer.types.GenericStreetNumber
+import com.vfs.ee.domain.customer.types.GenericStreetName
+import com.vfs.ee.domain.customer.types.GenericCityName
+import com.vfs.ee.domain.customer.types.CustomerKind
+import com.vfs.ee.domain.customer.types.CustomerLastName
+import com.vfs.ee.domain.customer.types.CustomerFirstName
+import com.vfs.ee.domain.customer.types.CustomerId
+
+namespace com.vfs.ee.domain.customer.models
+
+type SystemACustomerId inherits String
+
+model SystemABillingAddress {
+    billingStreetNumber: BillingStreetNumber
+    billingStreetName: BillingStreetName
+    billingCityName: BillingCityName
+}
+
+model SystemAMailingAddress {
+    mailingStreetNumber: MailingStreetNumber
+    mailingStreetName: MailingStreetName
+    mailingCityName: MailingCityName
+}
+
+model SystemAOtherAddress {
+    genericStreetNumber: GenericStreetNumber
+    genericStreetName: GenericStreetName
+    cityName: GenericCityName
+}
+
+model SystemADailyCustomerFeed {
+
+    id: SystemACustomerId
+
+    firstName: CustomerFirstName
+
+    lastName: CustomerLastName
+
+    dateOfBirth: CustomerDateOfBirth
+
+    email: CustomerEmailAddress?
+
+    billingAddress: SystemABillingAddress?
+
+    mailingAddress: SystemAMailingAddress?
+
+    otherAddresses: SystemAOtherAddress[]?
+}

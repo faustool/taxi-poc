@@ -1,0 +1,66 @@
+import com.vfs.ee.domain.customer.types.CustomerLastName
+import com.vfs.ee.domain.customer.types.CustomerFirstName
+import com.vfs.ee.domain.customer.types.CustomerEmailAddress
+import com.vfs.ee.domain.customer.types.BillingStreetAddress
+import com.vfs.ee.domain.customer.types.BillingCityName
+import com.vfs.ee.domain.customer.types.MailingStreetAddress
+import com.vfs.ee.domain.customer.types.MailingCityName
+import com.vfs.ee.domain.customer.types.GenericStreetAddress
+import com.vfs.ee.domain.customer.types.GenericCityName
+import com.vfs.ee.domain.customer.types.CustomerKind
+import com.vfs.ee.domain.customer.types.CustomerFullName
+import com.vfs.ee.domain.customer.types.CustomerId
+
+namespace com.vfs.ee.domain.customer.models
+
+[[ Represents which system this customer came from ]]
+enum SourceSystem {
+    SystemA, SystemB
+}
+
+[[ The source specific customer id in numeric form ]]
+type NumericCustomerId inherits Int
+
+[[ The source specific customer id in textual form ]]
+type TextualCustomerId inherits String
+
+
+model SilverBillingAddress {
+    billingStreetAddress: BillingStreetAddress
+    billingCityName: BillingCityName
+}
+
+model SilverMailingAddress {
+    mailingStreetAddress: MailingStreetAddress
+    mailingCityName: MailingCityName
+}
+
+model SilverOtherAddress {
+    streetAddress: GenericStreetAddress
+    cityName: GenericCityName
+}
+
+model SilverCustomerModel {
+
+    source: SourceSystem
+
+    numericId: NumericCustomerId?
+
+    textId: TextualCustomerId?
+
+    kind: CustomerKind
+
+    firstName: CustomerFirstName?
+
+    lastName: CustomerLastName?
+
+    fullName: CustomerFullName
+    
+    email: CustomerEmailAddress?
+
+    billingAddress: SilverBillingAddress?
+
+    mailingAddress: SilverMailingAddress?
+
+    otherAddresses: SilverOtherAddress[]?
+}
