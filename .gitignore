@@ -1,3 +1,5 @@
 .taxi/
+.vscode/
+.attach*
 dist/
 vyne/

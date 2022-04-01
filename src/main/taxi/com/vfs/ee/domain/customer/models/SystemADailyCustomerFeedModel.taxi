@@ -10,6 +10,7 @@ import com.vfs.ee.domain.customer.types.GenericStreetNumber
 import com.vfs.ee.domain.customer.types.GenericStreetName
 import com.vfs.ee.domain.customer.types.GenericCityName
 import com.vfs.ee.domain.customer.types.CustomerKind
+import com.vfs.ee.domain.customer.types.CustomerFullName
 import com.vfs.ee.domain.customer.types.CustomerLastName
 import com.vfs.ee.domain.customer.types.CustomerFirstName
 import com.vfs.ee.domain.customer.types.CustomerId
@@ -43,6 +44,8 @@ model SystemADailyCustomerFeed {
     firstName: CustomerFirstName
 
     lastName: CustomerLastName
+
+    fullName: CustomerFullName by concat(CustomerFirstName, ' ', CustomerLastName)
 
     dateOfBirth: CustomerDateOfBirth
 
